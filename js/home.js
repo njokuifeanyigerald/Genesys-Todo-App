@@ -72,7 +72,7 @@ function completetask(index){
     
 
     localStorage.setItem("todos", JSON.stringify(task));
-    edit.style.display = "none";
+    // edit.style.display = "none";
     showtask();
     
 }
