@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="images/png" href="/images/download.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <title>Document</title>
+    <link rel="manifest" href="./manifest.json" />
+    <title>Genesys Todo App</title>
 </head>
 <body  class="text-white">
     <div class="text-white text-center mb-5" style="background-color: black; height: 70px; padding-bottom: 50px; ">
@@ -56,5 +58,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="js/home.js"></script>
+    <script>
+        if ('serviceWorker' in navigator){
+            window.addEventListener('load', ()=> {
+                navigator.serviceWorker.register('./serviceWorker.js')
+                    .then((reg)=> console.log('success: ', reg))
+                    .catch((err) => console.log('error: ', err))
+            })
+        }
+    </script>
 </body>
 </html>
